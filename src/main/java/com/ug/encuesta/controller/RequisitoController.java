@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ug.encuesta.dominio.Requisito;
+import com.ug.encuesta.dominio.Subgrupo;
 import com.ug.encuesta.repository.RequisitoRepository;
 
 @RestController
@@ -19,6 +20,13 @@ public class RequisitoController {
 	@Autowired
 	private RequisitoRepository RequisitoRepository;
 	
+	
+	@RequestMapping (value="/subgrupos/{subgrupo_id}/requisitos", method=RequestMethod.GET)
+	public Iterable<Requisito> RequisitoBySubGrupo(@PathVariable int subgrupo_id) {
+		
+		return RequisitoRepository.getRequisitoBySubGrupo(subgrupo_id);
+		
+	}
 	
 	@RequestMapping (value="/requisitos", method=RequestMethod.POST)
 	public ResponseEntity<?> save(@RequestBody Requisito subgrupo)

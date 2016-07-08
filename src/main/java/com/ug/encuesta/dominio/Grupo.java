@@ -15,16 +15,16 @@ public class Grupo {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
+	//@Column(name="grupo_id")
 	private int grupo_id;
-	private String literal;
-	private String descripcion;
 	
+	private String literal;
+	
+	private String descripcion;
 	
 	public Grupo(){
 		
 	}
-	
 	
 	public Grupo(int grupo_id, String literal, String descripcion) {
 		super();
@@ -38,6 +38,7 @@ public class Grupo {
 	@JsonManagedReference
 	private List<Subgrupo> subgrupos;
 	
+
 	
 	public int getGrupo_id() {
 		return grupo_id;

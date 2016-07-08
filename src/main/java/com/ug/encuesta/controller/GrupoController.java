@@ -1,6 +1,6 @@
 package com.ug.encuesta.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Autowired; 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -42,12 +42,7 @@ public class GrupoController {
 			return new ResponseEntity<>(grupos,HttpStatus.OK);
 	}
 	
-	//@RequestMapping (value="/grupos", method=RequestMethod.GET)
-	//public ResponseEntity<?> findAll() {
-	//		Iterable<Grupo> grupos= grupoRepository.findAll();
-	//		return new ResponseEntity<>(grupos,HttpStatus.OK);
-	//}
-	
+
 	
 	@RequestMapping (value="/grupos/{grupo_id}", method=RequestMethod.GET)
 	public ResponseEntity<?> findOne(@PathVariable int grupo_id) {
@@ -57,6 +52,8 @@ public class GrupoController {
 			return new ResponseEntity<>(grupos,HttpStatus.OK);
 			
 	}
+	
+	
 
 	@RequestMapping (value="/grupos/{literal}", method=RequestMethod.GET)
 	public ResponseEntity<?> findByLiteral(@PathVariable String literal) {
@@ -66,37 +63,6 @@ public class GrupoController {
 			return new ResponseEntity<>(grupos,HttpStatus.OK);
 			
 	}
-	
-	// FALTA CODIGO
-	// FALTA CODIGO
-	// FALTA CODIGO
-	// FALTA CODIGO
-	// FALTA CODIGO
-	// FALTA CODIGO
-	
-	
-	//
-	
-	/*
-	
-	@RequestMapping (value="/grupos/{grupo_id}", method=RequestMethod.PUT)
-	public ResponseEntity<?> (@PathVariable int grupo_id) {
-			
-		Grupo  grupos= grupoRepository.findOne(grupo_id);
-			
-		if (grupos==null)
-		{
-			return new ResponseEntity<>(grupos,HttpStatus.NOT_FOUND);
-			
-		} else
-		{
-			grupoRepository.updat (grupos);
-			return new ResponseEntity<>(grupos,HttpStatus.OK);
-		}	
-	}
-		
-	*/
-	
 	
 }
 

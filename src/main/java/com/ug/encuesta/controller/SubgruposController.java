@@ -41,12 +41,6 @@ public class SubgruposController {
 	}
 	
 	
-	//@RequestMapping (value="/subgrupos", method=RequestMethod.GET)
-	//public ResponseEntity<?> findAll() {
-	//		Iterable<Subgrupo> subgrupos= SubgrupoRepository.findAll();
-	//		return new ResponseEntity<>(subgrupos,HttpStatus.OK);
-	//}
-	
 	
 	@RequestMapping (value="/subgrupos/{subgrupo_id}", method=RequestMethod.GET)
 	public ResponseEntity<?> findOne(@PathVariable int subgrupo_id) {
